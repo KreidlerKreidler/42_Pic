@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkreidle <lkreidle@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 13:39:01 by lkreidle          #+#    #+#             */
-/*   Updated: 2024/09/08 13:39:03 by lkreidle         ###   ########.fr       */
+/*   Created: 2024/09/08 17:10:00 by lkreidle          #+#    #+#             */
+/*   Updated: 2024/09/08 17:10:03 by lkreidle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_alpha(char *str)
 {
-	unsigned int	i;
+	int		i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+		{
+			return (0);
+		}
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (1);
 }

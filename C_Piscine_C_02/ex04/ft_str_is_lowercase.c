@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkreidle <lkreidle@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 17:18:43 by lkreidle          #+#    #+#             */
-/*   Updated: 2024/09/03 17:18:47 by lkreidle         ###   ########.fr       */
+/*   Created: 2024/09/08 17:14:44 by lkreidle          #+#    #+#             */
+/*   Updated: 2024/09/08 17:14:46 by lkreidle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_lowercase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if ((str[i] >= 'a') && (str[i] <= 'z'))
+			i++;
+		else
+			return (0);
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (1);
 }
